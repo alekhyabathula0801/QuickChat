@@ -10,7 +10,7 @@ const UserInfo = (props) => {
       <img alt="user" className="qc-ui-image" src={icon} />
       <div className="qc-ui-title">
         <div>{title}</div>
-        <img alt="user" className="qc-ui-settings" src={settings} />
+        <img alt="settings" className="qc-ui-settings" src={settings} />
       </div>
       <div className="qc-ui-subtitle">{subtitle}</div>
       <div className="qc-ui-status">
