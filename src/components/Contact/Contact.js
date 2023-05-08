@@ -1,5 +1,6 @@
 import React, { memo } from "react";
 import PropTypes from "prop-types";
+import Badge from "../Badge";
 import "./Contact.scss";
 
 const Contact = (props) => {
@@ -11,7 +12,7 @@ const Contact = (props) => {
         <img alt="user" className="qc-c-image" src={icon} />
         <div className={`qc-c-title ${activeCss}`}>{title}</div>
       </div>
-      {number && <div className="qc-c-badge">{number}</div>}
+      {number && <Badge number={number} />}
     </div>
   );
 };
