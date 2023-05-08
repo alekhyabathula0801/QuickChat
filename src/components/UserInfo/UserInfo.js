@@ -1,12 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
 import settings from "../../assets/settings.svg";
+import WrapperBox from "../WrapperBox";
 import "./UserInfo.scss";
 
 const UserInfo = (props) => {
   const { icon, title, subtitle, status } = props;
   return (
-    <div className="qc-user-info">
+    <WrapperBox className="qc-user-info">
       <img alt="user" className="qc-ui-image" src={icon} />
       <div className="qc-ui-title">
         <div>{title}</div>
@@ -19,7 +20,7 @@ const UserInfo = (props) => {
         </div>
         <div>{status}</div>
       </div>
-    </div>
+    </WrapperBox>
   );
 };
 
