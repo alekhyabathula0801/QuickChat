@@ -1,0 +1,16 @@
+.qc-button-with-icon {
+  color: #0f4cff;
+  background-color: #ffffff;
+  border: 1px solid #0f4cff;
+  padding: 1rem 1.2rem;
+  border-radius: 1rem;
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+
+  .qc-bwi-image {
+    width: 1.6rem;
+    height: 1.6rem;
+    margin-left: 0.4rem;
+  }
+}

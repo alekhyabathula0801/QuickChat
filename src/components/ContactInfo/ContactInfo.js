@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { ReactComponent as Mail } from "../../assets/mail.svg";
 import { ReactComponent as Profile } from "../../assets/profile.svg";
 import { ReactComponent as Archive } from "../../assets/archive.svg";
+import ButtonWithIcon from "../ButtonWithIcon";
 import "./ContactInfo.scss";
 
 const ContactInfo = (props) => {
@@ -18,10 +19,7 @@ const ContactInfo = (props) => {
         <Profile alt="profile" className="qc-ci-icon" />
         <div>{name}</div>
       </div>
-      <button className="qc-ci-button">
-        <div>Archive</div>
-        <Archive className="qc-ci-archive-icon" />
-      </button>
+      <ButtonWithIcon title={"Archive"} Icon={Archive} />
     </div>
   );
 };
