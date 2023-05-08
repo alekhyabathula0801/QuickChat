@@ -1,0 +1,22 @@
+.qc-share-link {
+  .qc-sl-title {
+    color: #122740;
+    font-weight: 600;
+    font-size: 1.8rem;
+    text-align: center;
+    margin: 2rem 0px 0.8rem;
+  }
+
+  .qc-sl-subtitle {
+    color: #3d5573;
+    margin-bottom: 0.8rem;
+    text-align: center;
+  }
+  .qc-button-with-icon {
+    background-color: #0f4cff;
+    color: #ffffff;
+    .qc-bwi-image {
+      margin-left: 0.8rem;
+    }
+  }
+}

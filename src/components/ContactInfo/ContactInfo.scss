@@ -1,16 +1,4 @@
 .qc-contact-info {
-  background-color: #f5f8fc;
-  border: 1px solid #e0e9f2;
-  padding: 2rem 2rem 2.5rem 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border-radius: 1.6rem;
-  color: #48607c;
-  font-size: 1.2rem;
-  font-weight: 500;
-
   .qc-ci-short-name {
     width: 6.4rem;
     height: 6.4rem;
@@ -41,11 +29,8 @@
       stroke: #122740;
     }
   }
-  
+
   .qc-bwi-image {
     stroke: #0f4cff;
-    width: 1.6rem;
-    height: 1.6rem;
-    margin-left: 0.4rem;
   }
 }
