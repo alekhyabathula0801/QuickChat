@@ -8,12 +8,14 @@ import ContactInfo from "../../components/ContactInfo";
 import WeekActivity from "../../components/WeekActivity/WeekActivity";
 import ShareLink from "../../components/ShareLink";
 import WrapperBox from "../../components/WrapperBox";
+import Logo from "../../components/Logo";
 import "./Dashboard.scss";
 
 const Dashboard = (props) => {
   return (
     <WrapperBox className="quick-chat-dashboard">
       <div className="qcd-left-panel">
+        <Logo />
         <UserInfo {...USER_DATA} />
         <ContactList />
       </div>

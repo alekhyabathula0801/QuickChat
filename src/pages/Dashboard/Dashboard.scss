@@ -6,9 +6,10 @@
   background-color: #ffffff;
   justify-content: flex-start;
   align-items: flex-start;
-  
+
   .qcd-left-panel {
     flex: 1;
+    padding-right: 2rem;
   }
 
   .qcd-main-pannel {
@@ -17,5 +18,6 @@
 
   .qcd-right-panel {
     flex: 1;
+    padding-left: 2rem;
   }
 }
