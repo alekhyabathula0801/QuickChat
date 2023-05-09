@@ -1,11 +1,13 @@
 .qc-week-activity {
+  margin: 2rem 0rem;
+  
   .qc-wa-meet-status {
     display: flex;
     flex-wrap: wrap;
     gap: 1.6rem;
 
     .qc-meeting-status {
-      min-width: 13rem;
+      min-width: 10rem;
     }
   }
   .qc-wa-content {
