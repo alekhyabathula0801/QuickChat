@@ -9,7 +9,7 @@ import ContactInfo from "./components/ContactInfo";
 import ShareLink from "./components/ShareLink";
 import UserMessage from "./components/UserMessage";
 import WeekActivity from "./components/WeekActivity/WeekActivity";
-import FooterAction from "./components/FooterAction";
+import FooterAction from "./components/InputBox";
 
 function App() {
   return (

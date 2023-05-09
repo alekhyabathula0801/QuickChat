@@ -4,9 +4,9 @@ import { ReactComponent as Forward } from "../../assets/forward.svg";
 import { ReactComponent as Smile } from "../../assets/smile.svg";
 import ButtonWithIcon from "../ButtonWithIcon";
 import WrapperBox from "../WrapperBox";
-import "./FooterAction.scss";
+import "./InputBox.scss";
 
-const FooterAction = (props) => {
+const InputBox = (props) => {
   return (
     <WrapperBox className="qc-footer-action">
       <Attachment className="qc-fa-attachment" />
@@ -19,4 +19,4 @@ const FooterAction = (props) => {
   );
 };
 
-export default FooterAction;
+export default InputBox;
