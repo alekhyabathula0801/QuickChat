@@ -1,6 +1,5 @@
 import React, { memo } from "react";
 import PropTypes from "prop-types";
-import Message from "../Message";
 import "./UserMessage.scss";
 
 const UserMessage = (props) => {
@@ -12,7 +11,7 @@ const UserMessage = (props) => {
         <span className="qc-um-dot" />
       </div>
       <div>
-        <Message title={title} isActive={isActive} />
+        <div className="qc-um-title">{title}</div>
         <div className="qc-um-subtext">{subtext}</div>
       </div>
     </div>
