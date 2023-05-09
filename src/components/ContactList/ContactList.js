@@ -14,23 +14,31 @@ const ContactList = (props) => {
     <>
       {viewData.map((data) => {
         const isOpen = displaySections.includes(data.id);
-        return (
-          <div className="qc-contact-list">
-            <div className="qc-cl-content">
-              <div className="qc-cl-title">
-                <div>{data.title}</div>
-                <Badge number={data.contacts.length} />
-              </div>
-              <img alt="arrow" className="qc-cl-arrow" src={isOpen ? upArrow : downArrow} />
-            </div>
-            {isOpen &&
-              data.contacts?.map((el, index) => {
-                return <Contact key={index} {...el} />;
-              })}
-          </div>
-        );
+        return <SubContactSection {...data} isOpen={isOpen} />;
       })}
     </>
+  );
+};
+
+const SubContactSection = ({ title, contacts = [], isOpen }) => {
+  return (
+    <div className="qc-contact-list">
+      <div className="qc-cl-content">
+        <div className="qc-cl-title">
+          <div>{title}</div>
+          <Badge number={contacts.length} />
+        </div>
+        <img
+          alt="arrow"
+          className="qc-cl-arrow"
+          src={isOpen ? upArrow : downArrow}
+        />
+      </div>
+      {isOpen &&
+        contacts?.map((el, index) => {
+          return <Contact key={index} {...el} />;
+        })}
+    </div>
   );
 };
 
