@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import PropTypes from "prop-types";
 import Message from "../Message";
 import "./UserMessage.scss";
@@ -19,7 +19,7 @@ const UserMessage = (props) => {
   );
 };
 
-export default UserMessage;
+export default memo(UserMessage);
 
 UserMessage.propTypes = {
   icon: PropTypes.string,

@@ -55,4 +55,8 @@ export const BAR_MEETER_DATA = [
     label: "Sat",
     value: 40,
   },
+  {
+    label: "Sun",
+    value: 70,
+  },
 ];
