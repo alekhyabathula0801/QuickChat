@@ -1,0 +1,44 @@
+.qc-bar-meter {
+  display: flex;
+  justify-content: space-between;
+  
+  .qc-bm-bar-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0rem 0.8rem;
+    color: #9ea4a9;
+    font-size: 1.4rem;
+    height: 20rem;
+    font-weight: 500;
+
+    .qc-bm-bar {
+      height: 10%;
+      width: 1rem;
+      background-color: #c7d7fe;
+      border-radius: 0.5rem;
+    }
+
+    .qc-bm-dot {
+      border-radius: 50%;
+      background-color: #c7d7fe;
+      width: 0.9rem;
+      height: 0.9rem;
+      margin: 1rem 0rem;
+    }
+
+    &.active-bar {
+      .qc-bm-bar {
+        width: 1.2rem;
+        background-color: #0f4cff;
+      }
+  
+      .qc-bm-dot {
+        background-color: #0f4cff;
+        width: 1.1rem;
+        height: 1.1rem;
+      }
+    }
+  }
+}
