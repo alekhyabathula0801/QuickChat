@@ -23,7 +23,7 @@ const MeetingStatus = (props) => {
 export default MeetingStatus;
 
 MeetingStatus.propTypes = {
-  Icon: PropTypes.node,
+  Icon: PropTypes.object,
   title: PropTypes.string,
   subtitle: PropTypes.string,
   className: PropTypes.string,

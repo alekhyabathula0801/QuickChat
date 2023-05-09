@@ -30,7 +30,10 @@
     }
   }
 
-  .qc-bwi-image {
-    stroke: #0f4cff;
+  .qc-button-with-icon {
+    margin-top: 1rem;
+    .qc-bwi-image {
+      stroke: #0f4cff;
+    }
   }
 }

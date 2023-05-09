@@ -1,0 +1,56 @@
+.qc-footer-action {
+  border: none;
+  flex-direction: row;
+  align-items: center;
+  background-color: #ffffff;
+  margin: 10px 0px;
+  box-shadow: 0px 12px 8px -12px rgba(0, 0, 0, 0.04),
+    0px 0px 1px 1px rgba(0, 0, 0, 0.04);
+  padding: 1.2rem;
+
+  .qc-fa-attachment {
+    width: 2rem;
+    height: 2rem;
+    stroke: #535d74;
+    margin-right: 1.5rem;
+  }
+
+  .qc-fa-input-wrapper {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    border: 1px solid #e1e2e5;
+    border-radius: 0.4rem;
+    padding-right: 1.2rem;
+    
+    input {
+      width: 100%;
+      padding: 1rem 0.8rem 1rem 1.2rem;
+      border: none;
+      border-radius: 0.4rem;
+      color: #535d74;
+      &:focus-visible {
+        outline: none;
+      }
+      &::placeholder {
+        color: #9096aa;
+      }
+    }
+
+    .qc-fa-smiley {
+      fill: #fdb800;
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+
+  .qc-button-with-icon {
+    background-color: #0f4cff;
+    color: #ffffff;
+    margin-left: 1rem;
+
+    .qc-bwi-image {
+      fill: #ffffff;
+    }
+  }
+}

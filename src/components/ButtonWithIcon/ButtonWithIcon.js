@@ -16,5 +16,5 @@ export default ButtonWithIcon;
 
 ButtonWithIcon.propTypes = {
   title: PropTypes.string,
-  Icon: PropTypes.node,
+  Icon: PropTypes.object,
 };
