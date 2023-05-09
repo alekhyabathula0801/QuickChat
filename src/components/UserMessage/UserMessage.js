@@ -8,7 +8,7 @@ const UserMessage = (props) => {
   return (
     <div className={`qc-user-message`}>
       <div className="qc-um-icon-wrapper">
-        <img src={icon} className="qc-um-icon" />
+        <img alt="icon" src={icon} className="qc-um-icon" />
         <span className="qc-um-dot" />
       </div>
       <div>

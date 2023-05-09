@@ -1,0 +1,76 @@
+.qc-meeting-status {
+  border: none;
+  flex-direction: row;
+  background-color: #d9e4fd;
+  padding: 1.8rem 1.5rem;
+  justify-content: flex-start;
+
+  .qc-ms-icon-wrapper {
+    background-color: #b2c6fe;
+    border-radius: 50%;
+    padding: 0.5rem;
+    width: 3.4rem;
+    height: 3.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+  }
+
+  .qc-ms-icon {
+    width: 2.4rem;
+    height: 2.4rem;
+    stroke: #0f4cff;
+    line-height: 0;
+  }
+
+  .qc-ms-title {
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: #0f4cff;
+  }
+
+  .qc-ms-subtitle {
+    font-weight: 500;
+    font-size: 1.2rem;
+    color: #3d5573;
+    margin-top: 0.2rem;
+  }
+
+  &.warning {
+    background-color: #fef0e8;
+    .qc-ms-icon-wrapper {
+      background-color: #fee1d3;
+      .qc-ms-icon {
+        stroke: #fb5524;
+      }
+    }
+    .qc-ms-title {
+      color: #fb5524;
+    }
+  }
+  &.attention {
+    background-color: #e2f5f3;
+    .qc-ms-icon-wrapper {
+      background-color: #c8f0ea;
+      .qc-ms-icon {
+        stroke: #22bc9c;
+      }
+    }
+    .qc-ms-title {
+      color: #22bc9c;
+    }
+  }
+  &.positive {
+    background-color: #f6f3ff;
+    .qc-ms-icon-wrapper {
+      background-color: #d9d3ff;
+      .qc-ms-icon {
+        stroke: #705cc4;
+      }
+    }
+    .qc-ms-title {
+      color: #705cc4;
+    }
+  }
+}
