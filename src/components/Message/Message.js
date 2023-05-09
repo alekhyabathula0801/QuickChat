@@ -3,25 +3,15 @@ import PropTypes from "prop-types";
 import "./Message.scss";
 
 const Message = (props) => {
-  const { title, backgroundColor, color, className } = props;
+  const { title, isActive } = props;
   return (
-    <div
-      style={{
-        color,
-        backgroundColor,
-      }}
-      className={`qc-message ${className}`}
-    >
-      {title}
-    </div>
+    <div className={`qc-message ${isActive ? "active" : ""}`}>{title}</div>
   );
 };
 
 export default Message;
 
 Message.propTypes = {
-  color: PropTypes.string,
   title: PropTypes.string,
-  className: PropTypes.string,
-  backgroundColor: PropTypes.string,
+  isActive: PropTypes.bool,
 };

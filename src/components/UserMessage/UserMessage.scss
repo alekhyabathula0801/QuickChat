@@ -1,7 +1,7 @@
 .qc-user-message {
   display: flex;
-  padding: 1rem 0rem;
-  
+  padding: 0.5rem 0rem;
+
   .qc-um-icon-wrapper {
     width: fit-content;
     position: relative;
@@ -11,7 +11,6 @@
     width: 3.6rem;
     height: 3.6rem;
     border-radius: 50%;
-    margin-right: 0.8rem;
   }
 
   .qc-um-dot {
@@ -19,14 +18,27 @@
     height: 6px;
     border-radius: 50%;
     position: absolute;
-    background-color: #22BC9C;
+    background-color: #22bc9c;
     border: 1px solid #ffffff;
     top: 2.4rem;
-    right: 0.8rem;
+    right: 0.1rem;
   }
 
   .qc-um-subtext {
-    color: #98A0B1;
-    padding-top: 0.5rem;
-  } 
+    color: #98a0b1;
+    padding: 0.5rem 0.8rem 0rem 0.8rem;
+  }
+
+  .qc-message {
+    margin: 0rem 0.8rem;
+  }
+
+  &.active {
+    display: flex;
+    flex-direction: row-reverse;
+
+    .qc-um-subtext {
+      text-align: right;
+    }
+  }
 }

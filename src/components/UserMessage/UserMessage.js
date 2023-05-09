@@ -4,15 +4,15 @@ import Message from "../Message";
 import "./UserMessage.scss";
 
 const UserMessage = (props) => {
-  const { icon, title, subtext } = props;
+  const { icon, title, subtext, isActive } = props;
   return (
-    <div className={`qc-user-message`}>
+    <div className={`qc-user-message ${isActive ? "active" : ""}`}>
       <div className="qc-um-icon-wrapper">
         <img alt="icon" src={icon} className="qc-um-icon" />
         <span className="qc-um-dot" />
       </div>
       <div>
-        <Message title={title} />
+        <Message title={title} isActive={isActive} />
         <div className="qc-um-subtext">{subtext}</div>
       </div>
     </div>
