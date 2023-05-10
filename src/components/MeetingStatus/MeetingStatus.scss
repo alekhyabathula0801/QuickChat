@@ -2,15 +2,15 @@
   border: none;
   flex-direction: row;
   background-color: #d9e4fd;
-  padding: 1.8rem 1.5rem;
+  padding: 1.6rem 1.2rem;
   justify-content: flex-start;
 
   .qc-ms-icon-wrapper {
     background-color: #b2c6fe;
     border-radius: 50%;
-    padding: 0.5rem;
-    width: 3.4rem;
-    height: 3.4rem;
+    padding: 0.2rem;
+    width: 2.4rem;
+    height: 2.4rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -18,23 +18,23 @@
   }
 
   .qc-ms-icon {
-    width: 2.4rem;
-    height: 2.4rem;
+    width: 1.6rem;
+    height: 1.6rem;
     stroke: #0f4cff;
     line-height: 0;
   }
 
   .qc-ms-title {
     font-weight: 700;
-    font-size: 1.8rem;
+    font-size: 1.4rem;
     color: #0f4cff;
   }
 
   .qc-ms-subtitle {
     font-weight: 500;
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: #3d5573;
-    margin-top: 0.2rem;
+    margin-top: 0.1rem;
   }
 
   &.warning {

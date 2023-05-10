@@ -9,14 +9,14 @@ import "./ContactList.scss";
 
 const ContactList = (props) => {
   const viewData = getContactListViewData(CONTACT_LIST);
-  const displaySections = ["active"];
+  const displaySections = ["active", "archived"];
   return (
-    <>
-      {viewData.map((data) => {
+    <div className="qc-contact-list-wrapper" >
+      {viewData.map((data, index) => {
         const isOpen = displaySections.includes(data.id);
-        return <SubContactSection {...data} isOpen={isOpen} />;
+        return <SubContactSection key={index} {...data} isOpen={isOpen} />;
       })}
-    </>
+    </div>
   );
 };
 

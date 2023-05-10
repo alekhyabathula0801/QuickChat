@@ -1,6 +1,7 @@
 export const CONTACT_LIST = [
   {
     id: "1",
+    isActive: true,
     isArchived: false,
     title: "Henry Boyd",
     icon: "https://www.goodmorningimagesdownload.com/wp-content/uploads/2021/12/Free-Sunflower-Unique-Whatsapp-DP-Images-Pics-Download-1.jpg",

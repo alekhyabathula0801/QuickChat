@@ -1,4 +1,27 @@
 .qc-conversations {
   border: none;
-  display: block;
+  display: flex;
+  height: calc(100% - 4.6rem);
+  align-items: unset;
+  justify-content: flex-end;
+  padding: 2rem 0rem;
+
+  .qc-c--scroll {
+    height: calc(100% - 62px);
+    overflow: auto;
+  }
+
+  .qc-c-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    .qc-user-message {
+      padding: 0rem 2rem;
+    }
+  }
+
+  .qc-footer-action {
+    margin: 2rem 2rem 0rem 2rem;
+  }
 }

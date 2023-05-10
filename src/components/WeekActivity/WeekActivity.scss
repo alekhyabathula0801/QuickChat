@@ -1,13 +1,15 @@
 .qc-week-activity {
   margin: 2rem 0rem;
-  
+
   .qc-wa-meet-status {
     display: flex;
     flex-wrap: wrap;
-    gap: 1.6rem;
+    column-gap: 1.2rem;
+    row-gap: 1.4rem;
+    justify-content: space-between;
 
     .qc-meeting-status {
-      min-width: 10rem;
+      min-width: 8.5rem;
     }
   }
   .qc-wa-content {
@@ -16,13 +18,13 @@
     align-items: center;
     font-weight: 400;
     font-size: 1.2rem;
-    color: #3d5573;
+    color: #6b81a5;
     width: 100%;
     margin-top: 2rem;
 
     .qc-wa-title {
       font-weight: 700;
-      font-size: 2rem;
+      font-size: 1.8rem;
       color: #122740;
     }
   }
