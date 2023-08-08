@@ -1,5 +1,6 @@
 import { createAction, createReducer } from "@reduxjs/toolkit";
 import { get } from "lodash-es";
+import { USER_DATA } from "../../components/UserInfo/constants";
 
 const MODULE_PREFIX = "[ QUICKCHAT USER CONFIG ]";
 
@@ -18,7 +19,7 @@ export const getUserData = (state) => {
 
 // initial state
 const initialState = {
-  userData: {},
+  userData: USER_DATA,
 };
 
 // reducer

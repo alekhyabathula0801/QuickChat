@@ -1,17 +1,18 @@
 import React, { useEffect, useRef } from "react";
+import { useSelector } from "react-redux";
+import { getUserData } from "../../dataLayer/reducers/userConfig";
 import InputBox from "../InputBox";
-import { USER_DATA } from "../UserInfo/constants";
 import UserMessage from "../UserMessage";
 import WrapperBox from "../WrapperBox";
 import { USER_CONVERSATIONS } from "./constants";
 import "./Conversations.scss";
 
 const Conversations = (props) => {
-
-  const messagesEndRef = useRef(null);
+  const bottomRef = useRef(null);
+  const userData = useSelector(getUserData);
 
   useEffect(() => {
-    messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
+    bottomRef.current.scrollIntoView({ behavior: "smooth" });
   }, []);
 
   return (
@@ -19,11 +20,11 @@ const Conversations = (props) => {
       <div className="qc-c-scroll">
         <div className="qc-c-wrapper">
           {USER_CONVERSATIONS.map((data, index) => {
-            const isActive = data.userId === USER_DATA.userId;
+            const isActive = data.userId === userData.userId;
             return <UserMessage key={index} {...data} isActive={isActive} />;
           })}
         </div>
-        <div ref={messagesEndRef} />
+        <div ref={bottomRef} />
       </div>
       <InputBox />
     </WrapperBox>
