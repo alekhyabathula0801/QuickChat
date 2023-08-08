@@ -1,12 +1,13 @@
 import React, { useEffect, useRef } from "react";
-import { USER_CONVERSATIONS, USER_DATA } from "./constants";
+import InputBox from "../InputBox";
+import { USER_DATA } from "../UserInfo/constants";
 import UserMessage from "../UserMessage";
 import WrapperBox from "../WrapperBox";
-import InputBox from "../InputBox";
+import { USER_CONVERSATIONS } from "./constants";
 import "./Conversations.scss";
 
 const Conversations = (props) => {
-  
+
   const messagesEndRef = useRef(null);
 
   useEffect(() => {

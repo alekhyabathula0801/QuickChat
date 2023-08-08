@@ -1,14 +1,13 @@
-import React from "react";
 import PropTypes from "prop-types";
-import UserInfo from "../../components/UserInfo";
-import { USER_DATA } from "../../components/Conversations/constants";
+import React from "react";
+import ContactInfo from "../../components/ContactInfo";
 import ContactList from "../../components/ContactList";
 import Conversations from "../../components/Conversations";
-import ContactInfo from "../../components/ContactInfo";
-import WeekActivity from "../../components/WeekActivity/WeekActivity";
-import ShareLink from "../../components/ShareLink";
-import WrapperBox from "../../components/WrapperBox";
 import Logo from "../../components/Logo";
+import ShareLink from "../../components/ShareLink";
+import UserInfo from "../../components/UserInfo";
+import WeekActivity from "../../components/WeekActivity/WeekActivity";
+import WrapperBox from "../../components/WrapperBox";
 import "./Dashboard.scss";
 
 const Dashboard = (props) => {
@@ -16,7 +15,7 @@ const Dashboard = (props) => {
     <WrapperBox className="quick-chat-dashboard">
       <div className="qcd-left-panel">
         <Logo />
-        <UserInfo {...USER_DATA} />
+        <UserInfo />
         <ContactList />
       </div>
       <div className="qcd-main-pannel">

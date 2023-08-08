@@ -1,11 +1,12 @@
-import React from "react";
 import PropTypes from "prop-types";
+import React from "react";
 import settings from "../../assets/settings.svg";
 import WrapperBox from "../WrapperBox";
+import { USER_DATA } from "./constants";
 import "./UserInfo.scss";
 
 const UserInfo = (props) => {
-  const { icon, title, subtitle, status } = props;
+  const { icon, title, subtitle, status } = USER_DATA;
   return (
     <WrapperBox className="qc-user-info">
       <img alt="user" className="qc-ui-image" src={icon} />
