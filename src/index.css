@@ -37,3 +37,14 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+
+@media only screen and (max-width: 900px) {
+  html ::-webkit-scrollbar {
+    width: 0px;
+  }
+  
+  body {
+    padding: 5px;
+  }
+}

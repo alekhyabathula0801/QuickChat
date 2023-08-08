@@ -1,9 +1,21 @@
 .qc-contact-list-wrapper {
   height: calc(100% - 192px - 100px);
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 1rem;
 
   .qc-contact-list {
     padding-top: 1rem;
+
+    .qc-cl-wrapper {
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 300ms ease-in-out;
+    }
+
+    .qc-cl-wrapper.active {
+      max-height: 70vh;
+    }
 
     .qc-cl-content {
       display: flex;
@@ -30,6 +42,13 @@
     .qc-cl-arrow {
       width: 1.2rem;
       height: 1.2rem;
+      transform: rotate(-180deg);
+      transition-timing-function: "ease-out";
+      transition-duration: 300ms;
+    }
+
+    .qc-cl-a-active {
+      transform: rotate(0deg);
     }
   }
 }

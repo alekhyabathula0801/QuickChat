@@ -11,7 +11,7 @@
 
   .qcd-left-panel {
     flex: 1;
-    padding-right: 2rem;
+    padding-right: 1rem;
     min-width: 22rem;
     height: 100%;
   }
@@ -27,5 +27,41 @@
     min-width: 28rem;
     overflow: auto;
     height: 100%;
+  }
+}
+
+@media only screen and (min-width: 900px) and (max-width: 1030px) {
+  .quick-chat-dashboard {
+    .qcd-right-panel {
+      min-width: 22rem;
+      .qc-week-activity .qc-wa-meet-status {
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .quick-chat-dashboard {
+    height: calc(100vh - 4.5rem - 11px);
+    .qcd-right-panel {
+      display: none;
+    }
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .quick-chat-dashboard {
+    height: calc(100vh - 3rem - 11px);
+    .qcd-left-panel {
+      padding-right: 1.5rem;
+    }
+  }
+  .qc-wrapper-box  {
+    padding: 1.5rem;
+  }
+  .qc-conversations {
+    height: calc(100% - 3rem);
   }
 }

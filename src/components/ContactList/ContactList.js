@@ -3,7 +3,6 @@ import Badge from "../Badge";
 import Contact from "../Contact";
 import { CONTACT_LIST } from "./constants";
 import upArrow from "../../assets/up-arrow.svg";
-import downArrow from "../../assets/down-arrow.svg";
 import { getContactListViewData } from "./utils";
 import { noop } from "lodash-es";
 import "./ContactList.scss";
@@ -57,14 +56,15 @@ const SubContactSection = ({
         </div>
         <img
           alt="arrow"
-          className="qc-cl-arrow"
-          src={isOpen ? upArrow : downArrow}
+          className={`qc-cl-arrow ${isOpen ? `qc-cl-a-active` : ''}`}
+          src={upArrow}
         />
       </div>
-      {isOpen &&
-        contacts?.map((el, index) => {
+      <div className={`qc-cl-wrapper ${isOpen ? 'active' : ''}`}  >
+        {contacts?.map((el, index) => {
           return <Contact key={index} {...el} />;
         })}
+      </div>
     </div>
   );
 };
