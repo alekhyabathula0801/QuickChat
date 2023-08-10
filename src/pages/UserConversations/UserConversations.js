@@ -16,11 +16,15 @@ const UserConversations = (props) => {
     navigate(APP_ROUTES.home);
   };
 
+  const redirectToContactDetails = () => {
+    navigate(APP_ROUTES.contactDetails);
+  };
+
   return (
     <WrapperBox className="quick-chat-user-conversations">
-      <div onClick={redirectToHome} className="qcuc-logo">
-        <img alt="logo" src={logo} />
-        <div>{selectedContact.name}</div>
+      <div className="qcuc-logo">
+        <img onClick={redirectToHome} alt="logo" src={logo} />
+        <div onClick={redirectToContactDetails}>{selectedContact.name}</div>
       </div>
       <div className="qcuc-main-pannel">
         <Conversations />
