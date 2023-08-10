@@ -1,15 +1,8 @@
 import React from "react";
-import { Provider } from "react-redux";
-import store from "./dataLayer/store";
 import Dashboard from "./pages/Dashboard";
-import "./App.css";
 
-function App() {
-  return (
-    <Provider store={store}>
-      <Dashboard />
-    </Provider>
-  );
-}
+const App = () => {
+  return <Dashboard />;
+};
 
 export default App;
