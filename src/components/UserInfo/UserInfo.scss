@@ -1,7 +1,7 @@
 .qc-user-info {
   margin-bottom: 2rem;
   margin-right: 1rem;
-  
+
   .qc-ui-image {
     width: 6.4rem;
     height: 6.4rem;
@@ -21,7 +21,14 @@
       height: 1.8rem;
       border-radius: 50%;
       margin-left: 0.6rem;
+      cursor: pointer;
     }
+  }
+
+  .qc-ui-settings-block {
+    position: relative;
+    display: flex;
+    justify-content: center;
   }
 
   .qc-ui-subtitle {
