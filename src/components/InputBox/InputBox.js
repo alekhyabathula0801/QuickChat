@@ -33,11 +33,13 @@ const InputBox = (props) => {
     if (isEmpty(message)) {
       return;
     }
+    const date = new Date().toISOString() ;
+
     const data = {
       messageId: conversations.length + 1,
       userId: userData.id,
       title: message,
-      subtext: "9h ago",
+      date,
     };
     dispatch(
       addConversations({

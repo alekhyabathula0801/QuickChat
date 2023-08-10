@@ -7,6 +7,7 @@ import InputBox from "../InputBox";
 import UserMessage from "../UserMessage";
 import WrapperBox from "../WrapperBox";
 import "./Conversations.scss";
+import { getDateViewValue } from "./utils";
 
 const Conversations = (props) => {
   const bottomRef = useRef(null);
@@ -31,10 +32,12 @@ const Conversations = (props) => {
             if (isActive) {
               icon = userData.icon;
             }
+            const subtext = getDateViewValue(data.date);
             return (
               <UserMessage
                 key={index}
                 {...data}
+                subtext={subtext}
                 icon={icon}
                 isActive={isActive}
               />
