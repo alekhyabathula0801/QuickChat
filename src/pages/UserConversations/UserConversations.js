@@ -1,8 +1,8 @@
 import React from "react";
 import { shallowEqual, useSelector } from "react-redux";
-import logo from "../../assets/quick-chat-logo.png";
 import Conversations from "../../components/Conversations";
-import WrapperBox from "../../components/WrapperBox";
+import ScreenHeader from "../../components/ScreenHeader";
+import ScreenWrapper from "../../components/ScreenWrapper";
 import { getSelectedContact } from "../../dataLayer/reducers/contacts";
 import useAppNavigation from "../../hooks/useAppNavigation";
 import { APP_ROUTES } from "../../navigation/routeConstants";
@@ -12,24 +12,20 @@ const UserConversations = (props) => {
   const { navigate } = useAppNavigation();
   const selectedContact = useSelector(getSelectedContact, shallowEqual);
 
-  const redirectToHome = () => {
-    navigate(APP_ROUTES.home);
-  };
-
   const redirectToContactDetails = () => {
     navigate(APP_ROUTES.contactDetails);
   };
 
   return (
-    <WrapperBox className="quick-chat-user-conversations">
-      <div className="qcuc-logo">
-        <img onClick={redirectToHome} alt="logo" src={logo} />
-        <div onClick={redirectToContactDetails}>{selectedContact.name}</div>
-      </div>
+    <ScreenWrapper className="quick-chat-user-conversations">
+      <ScreenHeader
+        title={selectedContact.name}
+        onTitleClick={redirectToContactDetails}
+      />
       <div className="qcuc-main-pannel">
         <Conversations />
       </div>
-    </WrapperBox>
+    </ScreenWrapper>
   );
 };
 
