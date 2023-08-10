@@ -26,3 +26,34 @@
     margin: 2rem 2rem 0rem 2rem;
   }
 }
+@media only screen and (max-width: 800px) {
+  .qc-conversations {
+    height: calc(100% - 3rem);
+    padding: 1rem 0rem;
+
+    .qc-c-wrapper .qc-user-message {
+      padding: 0rem 1rem 1rem 1rem;
+    }
+
+    .qc-footer-action {
+      margin: 1rem 1rem 0rem 1rem;
+      padding: 0.8rem;
+
+      .qc-fa-input-wrapper {
+        padding-right: 0.5rem;
+
+        input {
+          padding: 0.8rem 0.5rem 0.8rem 1rem;
+        }
+      }
+
+      .qc-fa-attachment {
+        margin-right: 0.5rem;
+      }
+      
+      .qc-button-with-icon {
+        margin-left: 0.5rem;
+      }
+    }
+  }
+}

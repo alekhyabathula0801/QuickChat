@@ -12,8 +12,15 @@
   .qcd-left-panel {
     flex: 1;
     padding-right: 2rem;
-    min-width: 22rem;
+    min-width: 23rem;
     height: 100%;
+    .qc-user-info {
+      margin-right: 1px;
+    }
+
+    .qc-contact-list {
+      padding-right: 1px;
+    }
   }
 
   .qcd-main-pannel {
@@ -30,10 +37,11 @@
   }
 }
 
-@media only screen and (min-width: 900px) and (max-width: 1030px) {
+@media only screen and (min-width: 940px) and (max-width: 1030px) {
   .quick-chat-dashboard {
     .qcd-right-panel {
       min-width: 22rem;
+
       .qc-week-activity .qc-wa-meet-status {
         justify-content: center;
         align-items: center;
@@ -42,26 +50,46 @@
   }
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 940px) {
   .quick-chat-dashboard {
     height: calc(100vh - 4.5rem - 11px);
+
     .qcd-right-panel {
       display: none;
     }
   }
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 800px) {
   .quick-chat-dashboard {
     height: calc(100vh - 3rem - 11px);
+
     .qcd-left-panel {
       padding-right: 1.5rem;
+
+      .qc-user-info {
+        margin-right: 0px;
+      }
+
+      .qc-contact-list-wrapper {
+        padding-right: 0px;
+      }
+    }
+    .qc-wrapper-box,
+    &.qc-wrapper-box {
+      padding: 1.5rem;
     }
   }
-  .qc-wrapper-box  {
-    padding: 1.5rem;
-  }
-  .qc-conversations {
-    height: calc(100% - 3rem);
+}
+
+@media only screen and (max-width: 680px) {
+  .quick-chat-dashboard {
+    .qcd-left-panel {
+      padding-right: 0rem;
+    }
+
+    .qcd-main-pannel {
+      display: none;
+    }
   }
 }

@@ -1,17 +1,20 @@
 import { noop } from "lodash-es";
 import React, { useMemo, useState } from "react";
 import { shallowEqual, useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import upArrow from "../../assets/up-arrow.svg";
 import {
   getContactsList,
   setSelectedContact,
 } from "../../dataLayer/reducers/contacts";
+import { isMobileDevice } from "../../utils/platform";
 import Badge from "../Badge";
 import Contact from "../Contact";
 import "./ContactList.scss";
 import { getContactListViewData } from "./utils";
 
 const ContactList = (props) => {
+  const isMobile = useMemo(isMobileDevice, []);
   const contacts = useSelector(getContactsList, shallowEqual);
   const viewData = useMemo(() => getContactListViewData(contacts), [contacts]);
   const [displaySections, setDisplaySections] = useState([viewData[0].id]);
@@ -37,6 +40,7 @@ const ContactList = (props) => {
             key={index}
             {...data}
             isOpen={isOpen}
+            isMobile={isMobile}
           />
         );
       })}
@@ -49,14 +53,24 @@ const SubContactSection = ({
   contacts = [],
   isOpen,
   id,
+  isMobile,
   onCardClick = noop,
 }) => {
   const dispatch = useDispatch();
-  const onClick = () => onCardClick(id);
+  const navigate = useNavigate();
+
+  const toogleContacts = () => onCardClick(id);
+
+  const onContactClick = (data = {}) => {
+    dispatch(setSelectedContact(data));
+    if (isMobile) {
+      navigate("/conversations");
+    }
+  };
 
   return (
     <div className="qc-contact-list">
-      <div className="qc-cl-content" onClick={onClick}>
+      <div className="qc-cl-content" onClick={toogleContacts}>
         <div className="qc-cl-title">
           <div>{title}</div>
           <Badge number={contacts.length} />
@@ -69,10 +83,8 @@ const SubContactSection = ({
       </div>
       <div className={`qc-cl-wrapper ${isOpen ? "active" : ""}`}>
         {contacts?.map((el, index) => {
-          const onContactClick = () => {
-            dispatch(setSelectedContact(el));
-          };
-          return <Contact key={index} onClick={onContactClick} {...el} />;
+          const onClick = () => onContactClick(el);
+          return <Contact key={index} onClick={onClick} {...el} />;
         })}
       </div>
     </div>

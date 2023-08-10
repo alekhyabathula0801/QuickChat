@@ -1,6 +1,7 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
 import { Provider } from "react-redux";
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import App from "./App";
 import store from "./dataLayer/store";
 import "./index.scss";
@@ -9,10 +10,19 @@ import reportWebVitals from "./reportWebVitals";
 const container = document.getElementById("root");
 const root = createRoot(container);
 
+const router = createBrowserRouter([
+	{
+		path: '*',
+		element: (
+				<App />
+		),
+	},
+]);
+
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+    <RouterProvider router={router} />
     </Provider>
   </React.StrictMode>
 );
