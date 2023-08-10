@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { shallowEqual, useDispatch, useSelector } from "react-redux";
 import { ReactComponent as Attachment } from "../../assets/attachment.svg";
 import { ReactComponent as Forward } from "../../assets/forward.svg";
 import { ReactComponent as Smile } from "../../assets/smile.svg";
@@ -12,9 +12,9 @@ import "./InputBox.scss";
 
 const InputBox = (props) => {
   const dispatch = useDispatch();
-  const userData = useSelector(getUserData);
-  const selectedContact = useSelector(getSelectedContact);
-  const conversations = useSelector((state) => getConversationsById(state, selectedContact.id));
+  const userData = useSelector(getUserData, shallowEqual);
+  const selectedContact = useSelector(getSelectedContact, shallowEqual);
+  const conversations = useSelector((state) => getConversationsById(state, selectedContact.id), shallowEqual);
   const [message, setMessage] = useState('');
 
   const onChange = (event) => {

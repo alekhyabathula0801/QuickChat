@@ -1,13 +1,13 @@
 import PropTypes from "prop-types";
 import React, { memo, useMemo } from "react";
-import { useSelector } from "react-redux";
+import { shallowEqual, useSelector } from "react-redux";
 import { getSelectedContact } from "../../dataLayer/reducers/contacts";
 import Badge from "../Badge";
 import "./Contact.scss";
 
 const Contact = (props) => {
   const { name, icon, className, number, id, onClick } = props;
-  const selectedContact = useSelector(getSelectedContact);
+  const selectedContact = useSelector(getSelectedContact, shallowEqual);
 
   const getActiveTagClassname = () => {
     const isActiveContact = selectedContact.id === id;

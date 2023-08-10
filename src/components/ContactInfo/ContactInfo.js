@@ -1,5 +1,5 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { shallowEqual, useSelector } from "react-redux";
 import { ReactComponent as Archive } from "../../assets/archive.svg";
 import { ReactComponent as Mail } from "../../assets/mail.svg";
 import { ReactComponent as Profile } from "../../assets/profile.svg";
@@ -9,7 +9,7 @@ import WrapperBox from "../WrapperBox";
 import "./ContactInfo.scss";
 
 const ContactInfo = (props) => {
-  const { shortName, name, email } = useSelector(getSelectedContact);
+  const { shortName, name, email } = useSelector(getSelectedContact, shallowEqual);
   return (
     <WrapperBox className="qc-contact-info">
       <div className="qc-ci-short-name">{shortName}</div>

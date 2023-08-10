@@ -1,6 +1,6 @@
 import { noop } from "lodash-es";
 import React, { useMemo, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { shallowEqual, useDispatch, useSelector } from "react-redux";
 import upArrow from "../../assets/up-arrow.svg";
 import {
   getContactsList,
@@ -12,7 +12,7 @@ import "./ContactList.scss";
 import { getContactListViewData } from "./utils";
 
 const ContactList = (props) => {
-  const contacts = useSelector(getContactsList);
+  const contacts = useSelector(getContactsList, shallowEqual);
   const viewData = useMemo(() => getContactListViewData(contacts), [contacts]);
   const [displaySections, setDisplaySections] = useState([viewData[0].id]);
 

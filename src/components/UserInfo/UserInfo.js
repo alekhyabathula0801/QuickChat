@@ -1,13 +1,13 @@
 import PropTypes from "prop-types";
 import React from "react";
-import { useSelector } from "react-redux";
+import { shallowEqual, useSelector } from "react-redux";
 import settings from "../../assets/settings.svg";
 import { getUserData } from "../../dataLayer/reducers/userConfig";
 import WrapperBox from "../WrapperBox";
 import "./UserInfo.scss";
 
 const UserInfo = (props) => {
-  const { icon, name, subtitle, status } = useSelector(getUserData);
+  const { icon, name, subtitle, status } = useSelector(getUserData, shallowEqual);
   return (
     <WrapperBox className="qc-user-info">
       <img alt="user" className="qc-ui-image" src={icon} />

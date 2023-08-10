@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { useSelector } from "react-redux";
+import { shallowEqual, useSelector } from "react-redux";
 import { getSelectedContact } from "../../dataLayer/reducers/contacts";
 import { getConversationsById } from "../../dataLayer/reducers/conversations";
 import { getUserData } from "../../dataLayer/reducers/userConfig";
@@ -10,9 +10,12 @@ import "./Conversations.scss";
 
 const Conversations = (props) => {
   const bottomRef = useRef(null);
-  const userData = useSelector(getUserData);
-  const selectedContact = useSelector(getSelectedContact);
-  const conversations = useSelector((state) => getConversationsById(state, selectedContact.id));
+  const userData = useSelector(getUserData, shallowEqual);
+  const selectedContact = useSelector(getSelectedContact, shallowEqual);
+  const conversations = useSelector(
+    (state) => getConversationsById(state, selectedContact.id),
+    shallowEqual
+  );
 
   useEffect(() => {
     bottomRef.current.scrollIntoView({ behavior: "smooth" });
@@ -28,7 +31,14 @@ const Conversations = (props) => {
             if (isActive) {
               icon = userData.icon;
             }
-            return <UserMessage key={index} {...data} icon={icon} isActive={isActive} />;
+            return (
+              <UserMessage
+                key={index}
+                {...data}
+                icon={icon}
+                isActive={isActive}
+              />
+            );
           })}
         </div>
         <div ref={bottomRef} />

@@ -60,10 +60,12 @@ export const USER_CONVERSATIONS = {
       title: "I'am good thanks for asking.",
       subtext: "9h ago",
     },
+  ],
+  3: [
     {
       messageId: "1",
       userId: "1",
-      title: "Hi Henry!!",
+      title: "Hi Martha!!",
       subtext: "9h ago",
     },
     {
@@ -74,13 +76,13 @@ export const USER_CONVERSATIONS = {
     },
     {
       messageId: "3",
-      userId: "2",
+      userId: "3",
       title: "Hey Bill, nice to meet you",
       subtext: "9h ago",
     },
     {
       messageId: "4",
-      userId: "2",
+      userId: "3",
       title: "Hope you're doing fine.",
       subtext: "9h ago",
     },
@@ -90,10 +92,12 @@ export const USER_CONVERSATIONS = {
       title: "I'am good thanks for asking.",
       subtext: "9h ago",
     },
+  ],
+  4: [
     {
       messageId: "1",
       userId: "1",
-      title: "Hi Henry!!",
+      title: "Hi Jerry!!",
       subtext: "9h ago",
     },
     {
@@ -104,13 +108,45 @@ export const USER_CONVERSATIONS = {
     },
     {
       messageId: "3",
-      userId: "2",
+      userId: "4",
       title: "Hey Bill, nice to meet you",
       subtext: "9h ago",
     },
     {
       messageId: "4",
-      userId: "2",
+      userId: "4",
+      title: "Hope you're doing fine.",
+      subtext: "9h ago",
+    },
+    {
+      messageId: "5",
+      userId: "1",
+      title: "I'am good thanks for asking.",
+      subtext: "9h ago",
+    },
+  ],
+  5: [
+    {
+      messageId: "1",
+      userId: "1",
+      title: "Hi Reid!!",
+      subtext: "9h ago",
+    },
+    {
+      messageId: "2",
+      userId: "1",
+      title: "How can I help you today?",
+      subtext: "9h ago",
+    },
+    {
+      messageId: "3",
+      userId: "5",
+      title: "Hey Bill, nice to meet you",
+      subtext: "9h ago",
+    },
+    {
+      messageId: "4",
+      userId: "5",
       title: "Hope you're doing fine.",
       subtext: "9h ago",
     },

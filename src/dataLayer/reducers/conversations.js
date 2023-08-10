@@ -36,7 +36,7 @@ export default createReducer(initialState, (builder) => {
   });
   builder.addCase(addConversations, (state, action) => {
     const { id, data } = action.payload;
-    const updatedData = state.conversations[id];
+    const updatedData = state.conversations[id] || [];
     updatedData.push(data);
     state.conversations[id] = updatedData;
   });
