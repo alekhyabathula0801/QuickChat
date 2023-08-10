@@ -4,12 +4,12 @@ import { USER_DATA } from "../../components/UserInfo/constants";
 
 const MODULE_PREFIX = "[ QUICKCHAT USER CONFIG ]";
 
-const Actions = {
+const ACTIONS = {
   setUserData: `${MODULE_PREFIX} setUserData`,
 };
 
 // actions
-export const setUserData = createAction(Actions.setUserData);
+export const setUserData = createAction(ACTIONS.setUserData);
 
 // selector
 export const getUserData = (state) => {

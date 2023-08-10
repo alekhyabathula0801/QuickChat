@@ -1,14 +1,16 @@
-import React, { useState } from "react";
+import { noop } from "lodash-es";
+import React, { useMemo, useState } from "react";
+import { useSelector } from "react-redux";
+import upArrow from "../../assets/up-arrow.svg";
+import { getContactsList } from "../../dataLayer/reducers/contacts";
 import Badge from "../Badge";
 import Contact from "../Contact";
-import { CONTACT_LIST } from "./constants";
-import upArrow from "../../assets/up-arrow.svg";
-import { getContactListViewData } from "./utils";
-import { noop } from "lodash-es";
 import "./ContactList.scss";
+import { getContactListViewData } from "./utils";
 
 const ContactList = (props) => {
-  const viewData = getContactListViewData(CONTACT_LIST);
+  const contacts = useSelector(getContactsList);
+  const viewData = useMemo(() => getContactListViewData(contacts), [contacts]);
   const [displaySections, setDisplaySections] = useState([viewData[0].id]);
 
   const handleDisplaySections = (value) => {

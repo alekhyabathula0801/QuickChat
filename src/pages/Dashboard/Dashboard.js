@@ -22,11 +22,7 @@ const Dashboard = (props) => {
         <Conversations />
       </div>
       <div className="qcd-right-panel">
-        <ContactInfo
-          shortName={"HB"}
-          name="Henry Boyd"
-          email={"henryboyd@gmail.com"}
-        />
+        <ContactInfo />
         <WeekActivity />
         <ShareLink />
       </div>

@@ -1,14 +1,15 @@
 import React from "react";
-import PropTypes from "prop-types";
+import { useSelector } from "react-redux";
+import { ReactComponent as Archive } from "../../assets/archive.svg";
 import { ReactComponent as Mail } from "../../assets/mail.svg";
 import { ReactComponent as Profile } from "../../assets/profile.svg";
-import { ReactComponent as Archive } from "../../assets/archive.svg";
+import { getSelectedContact } from "../../dataLayer/reducers/contacts";
 import ButtonWithIcon from "../ButtonWithIcon";
 import WrapperBox from "../WrapperBox";
 import "./ContactInfo.scss";
 
 const ContactInfo = (props) => {
-  const { shortName, name, email } = props;
+  const { shortName, name, email } = useSelector(getSelectedContact);
   return (
     <WrapperBox className="qc-contact-info">
       <div className="qc-ci-short-name">{shortName}</div>
@@ -26,9 +27,3 @@ const ContactInfo = (props) => {
 };
 
 export default ContactInfo;
-
-ContactInfo.propTypes = {
-  shortName: PropTypes.string,
-  email: PropTypes.string,
-  name: PropTypes.string,
-};
