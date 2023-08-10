@@ -1,4 +1,3 @@
-import PropTypes from "prop-types";
 import React from "react";
 import ContactInfo from "../../components/ContactInfo";
 import ContactList from "../../components/ContactList";
@@ -31,7 +30,3 @@ const Dashboard = (props) => {
 };
 
 export default Dashboard;
-
-Dashboard.propTypes = {
-  number: PropTypes.number,
-};
