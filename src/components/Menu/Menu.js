@@ -3,13 +3,14 @@ import { array, bool, func } from "prop-types";
 import React from "react";
 import "./Menu.scss";
 
-const Menu = ({ options, isOpen, onClose }) => {
+const Menu = ({ options, isOpen, onClose, onMenuItemClick }) => {
   return (
     <div className={`qc-menu ${isOpen ? "qc-menu-active" : ""}`}>
       <div className="qc-menu-list">
         {options.map((data, index) => {
+          const onClick = () => onMenuItemClick(data);
           return (
-            <div className="qc-menu-item" key={index}>
+            <div onClick={onClick} className="qc-menu-item" key={index}>
               {data.title}
             </div>
           );
@@ -32,4 +33,5 @@ Menu.defaultProps = {
   options: [],
   isOpen: false,
   onClose: noop,
+  onMenuItemClick: noop,
 };

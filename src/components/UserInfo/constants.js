@@ -1,3 +1,5 @@
+import { APP_ROUTES } from "../../navigation/routeConstants";
+
 export const USER_DATA = {
   id: "1",
   name: "Bill Bradford",
@@ -7,6 +9,11 @@ export const USER_DATA = {
 };
 
 export const MENU_OPTIONS = [
-  { title: "Edit profile", id: "edit" },
+  { title: "Edit Profile", id: "edit" },
+  {
+    title: "User Activity",
+    id: "userActivity",
+    pathname: APP_ROUTES.userActivity,
+  },
   { title: "Logout", id: "logout" },
 ];

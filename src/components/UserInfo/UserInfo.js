@@ -2,12 +2,14 @@ import React, { useState } from "react";
 import { shallowEqual, useSelector } from "react-redux";
 import settings from "../../assets/settings.svg";
 import { getUserData } from "../../dataLayer/reducers/userConfig";
+import useAppNavigation from "../../hooks/useAppNavigation";
 import Menu from "../Menu";
 import WrapperBox from "../WrapperBox";
 import { MENU_OPTIONS } from "./constants";
 import "./UserInfo.scss";
 
 const UserInfo = (props) => {
+  const { navigate } = useAppNavigation();
   const { icon, name, subtitle, status } = useSelector(
     getUserData,
     shallowEqual
@@ -20,6 +22,13 @@ const UserInfo = (props) => {
 
   const closeMenu = () => {
     setIsMenuOpen(false);
+  };
+
+  const onMenuItemClick = (data = {}) => {
+    const pathname = data.pathname;
+    if (pathname) {
+      navigate(pathname);
+    }
   };
 
   return (
@@ -38,6 +47,7 @@ const UserInfo = (props) => {
             isOpen={isMenuOpen}
             onClose={closeMenu}
             options={MENU_OPTIONS}
+            onMenuItemClick={onMenuItemClick}
           />
         </div>
       </div>
