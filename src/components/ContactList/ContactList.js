@@ -1,12 +1,12 @@
 import { noop } from "lodash-es";
 import React, { useMemo, useState } from "react";
 import { shallowEqual, useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
 import upArrow from "../../assets/up-arrow.svg";
 import {
   getContactsList,
-  setSelectedContact
+  setSelectedContact,
 } from "../../dataLayer/reducers/contacts";
+import useAppNavigation from "../../hooks/useAppNavigation";
 import { APP_ROUTES } from "../../navigation/routeConstants";
 import { isMobileDevice } from "../../utils/platform";
 import Badge from "../Badge";
@@ -58,7 +58,7 @@ const SubContactSection = ({
   onCardClick = noop,
 }) => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
+  const { navigate } = useAppNavigation();
 
   const toogleContacts = () => onCardClick(id);
 
