@@ -37,5 +37,6 @@ BarMeter.propTypes = {
 
 Bar.propTypes = {
   label: PropTypes.string,
+  value: PropTypes.number,
   isActive: PropTypes.bool,
 };

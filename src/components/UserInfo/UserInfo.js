@@ -7,12 +7,12 @@ import WrapperBox from "../WrapperBox";
 import "./UserInfo.scss";
 
 const UserInfo = (props) => {
-  const { icon, title, subtitle, status } = useSelector(getUserData);
+  const { icon, name, subtitle, status } = useSelector(getUserData);
   return (
     <WrapperBox className="qc-user-info">
       <img alt="user" className="qc-ui-image" src={icon} />
       <div className="qc-ui-title">
-        <div>{title}</div>
+        <div>{name}</div>
         <img alt="settings" className="qc-ui-settings" src={settings} />
       </div>
       <div className="qc-ui-subtitle">{subtitle}</div>
@@ -30,7 +30,7 @@ export default UserInfo;
 
 UserInfo.propTypes = {
   icon: PropTypes.string,
-  title: PropTypes.string,
+  name: PropTypes.string,
   subtitle: PropTypes.string,
   status: PropTypes.string,
 };

@@ -1,8 +1,11 @@
 import { noop } from "lodash-es";
 import React, { useMemo, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import upArrow from "../../assets/up-arrow.svg";
-import { getContactsList } from "../../dataLayer/reducers/contacts";
+import {
+  getContactsList,
+  setSelectedContact,
+} from "../../dataLayer/reducers/contacts";
 import Badge from "../Badge";
 import Contact from "../Contact";
 import "./ContactList.scss";
@@ -48,7 +51,9 @@ const SubContactSection = ({
   id,
   onCardClick = noop,
 }) => {
+  const dispatch = useDispatch();
   const onClick = () => onCardClick(id);
+
   return (
     <div className="qc-contact-list">
       <div className="qc-cl-content" onClick={onClick}>
@@ -58,13 +63,16 @@ const SubContactSection = ({
         </div>
         <img
           alt="arrow"
-          className={`qc-cl-arrow ${isOpen ? `qc-cl-a-active` : ''}`}
+          className={`qc-cl-arrow ${isOpen ? `qc-cl-a-active` : ""}`}
           src={upArrow}
         />
       </div>
-      <div className={`qc-cl-wrapper ${isOpen ? 'active' : ''}`}  >
+      <div className={`qc-cl-wrapper ${isOpen ? "active" : ""}`}>
         {contacts?.map((el, index) => {
-          return <Contact key={index} {...el} />;
+          const onContactClick = () => {
+            dispatch(setSelectedContact(el));
+          };
+          return <Contact key={index} onClick={onContactClick} {...el} />;
         })}
       </div>
     </div>
