@@ -5,8 +5,9 @@ import { useNavigate } from "react-router-dom";
 import upArrow from "../../assets/up-arrow.svg";
 import {
   getContactsList,
-  setSelectedContact,
+  setSelectedContact
 } from "../../dataLayer/reducers/contacts";
+import { APP_ROUTES } from "../../navigation/routeConstants";
 import { isMobileDevice } from "../../utils/platform";
 import Badge from "../Badge";
 import Contact from "../Contact";
@@ -64,7 +65,7 @@ const SubContactSection = ({
   const onContactClick = (data = {}) => {
     dispatch(setSelectedContact(data));
     if (isMobile) {
-      navigate("/conversations");
+      navigate(APP_ROUTES.conversations);
     }
   };
 

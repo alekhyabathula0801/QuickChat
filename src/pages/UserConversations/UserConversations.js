@@ -5,6 +5,7 @@ import logo from "../../assets/quick-chat-logo.png";
 import Conversations from "../../components/Conversations";
 import WrapperBox from "../../components/WrapperBox";
 import { getSelectedContact } from "../../dataLayer/reducers/contacts";
+import { APP_ROUTES } from "../../navigation/routeConstants";
 import "./UserConversations.scss";
 
 const UserConversations = (props) => {
@@ -12,7 +13,7 @@ const UserConversations = (props) => {
   const selectedContact = useSelector(getSelectedContact, shallowEqual);
 
   const redirectToHome = () => {
-    navigate("/");
+    navigate(APP_ROUTES.home);
   };
 
   return (
