@@ -5,8 +5,7 @@ import { getSelectedContact } from "../../dataLayer/reducers/contacts";
 import Badge from "../Badge";
 import "./Contact.scss";
 
-const Contact = (props) => {
-  const { name, icon, className, number, id, onClick } = props;
+const Contact = ({ name, icon, className, number, id, onClick }) => {
   const selectedContact = useSelector(getSelectedContact, shallowEqual);
 
   const getActiveTagClassname = () => {

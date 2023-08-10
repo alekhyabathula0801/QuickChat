@@ -3,8 +3,7 @@ import PropTypes from "prop-types";
 import WrapperBox from "../WrapperBox";
 import "./MeetingStatus.scss";
 
-const MeetingStatus = (props) => {
-  const { Icon, title, subtitle, className = "" } = props;
+const MeetingStatus = ({ Icon, title, subtitle, className }) => {
   return (
     <WrapperBox className={`qc-meeting-status ${className}`}>
       {Icon && (

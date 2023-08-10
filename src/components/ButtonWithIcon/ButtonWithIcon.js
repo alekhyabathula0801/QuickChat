@@ -3,8 +3,7 @@ import PropTypes from "prop-types";
 import React from "react";
 import "./ButtonWithIcon.scss";
 
-const ButtonWithIcon = (props) => {
-  const { title, Icon, onClick } = props;
+const ButtonWithIcon = ({ title, Icon, onClick }) => {
   return (
     <button onClick={onClick} className="qc-button-with-icon">
       <div>{title}</div>

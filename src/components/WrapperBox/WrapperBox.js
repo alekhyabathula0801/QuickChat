@@ -11,4 +11,5 @@ export default WrapperBox;
 
 WrapperBox.propTypes = {
   className: PropTypes.string,
+  children: PropTypes.node,
 };
