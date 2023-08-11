@@ -7,7 +7,7 @@
   justify-content: flex-start;
   align-items: flex-start;
   border-radius: 3rem;
-  height: calc(100vh - 4.5rem - 42px);
+  height: calc(100vh - 7.5rem);
 
   .qcd-left-panel {
     flex: 1;
@@ -15,11 +15,11 @@
     min-width: 23rem;
     height: 100%;
     .qc-user-info {
-      margin-right: 1px;
+      margin-right: 1rem;
     }
 
-    .qc-contact-list {
-      padding-right: 1px;
+    .qc-contact-list-wrapper {
+      padding-right: 1rem;
     }
   }
 
@@ -52,8 +52,18 @@
 
 @media only screen and (max-width: 940px) {
   .quick-chat-dashboard {
-    height: calc(100vh - 4.5rem - 11px);
+    height: calc(100vh - 5.5rem);
+    .qcd-left-panel {
+      padding-right: 1.5rem;
 
+      .qc-user-info {
+        margin-right: 0rem;
+      }
+
+      .qc-contact-list-wrapper {
+        padding-right: 0rem;
+      }
+    }
     .qcd-right-panel {
       display: none;
     }
@@ -62,19 +72,8 @@
 
 @media only screen and (max-width: 800px) {
   .quick-chat-dashboard {
-    height: calc(100vh - 3rem - 11px);
+    height: calc(100vh - 4rem);
 
-    .qcd-left-panel {
-      padding-right: 1.5rem;
-
-      .qc-user-info {
-        margin-right: 0px;
-      }
-
-      .qc-contact-list-wrapper {
-        padding-right: 0px;
-      }
-    }
     .qc-wrapper-box,
     &.qc-wrapper-box {
       padding: 1.5rem;

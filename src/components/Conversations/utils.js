@@ -25,5 +25,5 @@ export const getDateViewValue = (date = "") => {
     return `${timeDifferenceInHours}h ago`;
   }
   const timeDifferenceInDays = parseInt(timeDifferenceInHours / 24);
-  return `${timeDifferenceInDays}days ago`;
+  return `${timeDifferenceInDays}day${timeDifferenceInDays > 1 ? `s` : ""} ago`;
 };

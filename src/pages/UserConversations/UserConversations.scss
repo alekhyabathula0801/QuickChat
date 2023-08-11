@@ -1,7 +1,7 @@
 .quick-chat-user-conversations {
   background-color: white;
   align-items: flex-start;
-  height: calc(100vh - 3rem - 11px);
+  height: calc(100vh - 4rem);
   padding: 1rem;
 
   .qcuc-logo {
@@ -21,7 +21,7 @@
   }
 
   .qcuc-main-pannel {
-    height: calc(100% - 50px);
+    height: calc(100% - 5rem);
     width: 100%;
   }
 }
