@@ -11,6 +11,7 @@ export const CONTACT_LIST = [
   {
     id: "3",
     isArchived: false,
+    isActive: false,
     number: 2,
     shortName: "MC",
     email: "marthacurtis@gmail.com",
@@ -20,6 +21,7 @@ export const CONTACT_LIST = [
   {
     id: "4",
     isArchived: true,
+    isActive: true,
     shortName: "RJ",
     email: "reidjerry@gmail.com",
     name: "Reid Jerry",
@@ -28,6 +30,7 @@ export const CONTACT_LIST = [
   {
     id: "5",
     isArchived: false,
+    isActive: true,
     shortName: "CR",
     email: "christinereid@gmail.com",
     name: "Christine Reid",
@@ -36,6 +39,7 @@ export const CONTACT_LIST = [
   {
     id: "6",
     isArchived: true,
+    isActive: true,
     shortName: "GP",
     email: "guzmphillis@gmail.com",
     name: "Guzm Phillis",
@@ -44,6 +48,7 @@ export const CONTACT_LIST = [
   {
     id: "7",
     isArchived: false,
+    isActive: true,
     shortName: "JG",
     email: "jerryguzman@gmail.com",
     name: "Jerry Guzman",
@@ -52,6 +57,7 @@ export const CONTACT_LIST = [
   {
     id: "8",
     isArchived: false,
+    isActive: true,
     shortName: "RW",
     email: "russellwilliams@gmail.com",
     name: "Russell Williams",

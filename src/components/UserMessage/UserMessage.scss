@@ -18,10 +18,14 @@
     height: 0.6rem;
     border-radius: 50%;
     position: absolute;
-    background-color: #22bc9c;
+    background-color: #98a0b1;
     border: 1px solid #ffffff;
     top: 2.4rem;
     right: 0.1rem;
+
+    &.qc-um-dot-active {
+      background-color: #22bc9c;
+    }
   }
 
   .qc-um-subtext {

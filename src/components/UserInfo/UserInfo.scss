@@ -40,6 +40,10 @@
     align-items: center;
   }
 
+  .qc-ui-s-text {
+    min-width: 5rem;
+  }
+
   .qc-ui-toggle {
     background-color: #0f4cff;
     border-radius: 2rem;
@@ -47,6 +51,7 @@
     padding: 0.7rem 0.4rem;
     position: relative;
     margin-right: 0.4rem;
+    cursor: pointer;
 
     .qc-uit-dot {
       width: 0.6rem;
@@ -54,9 +59,17 @@
       border-radius: 50%;
       background-color: #ffffff;
       position: absolute;
-      float: right;
-      right: 0.4rem;
+      float: left;
+      left: 0.4rem;
       top: 0.4rem;
+    }
+
+    &.qc-ui-toggle-active {
+      .qc-uit-dot {
+        float: right;
+        right: 0.4rem;
+        left: unset;
+      }
     }
   }
 }

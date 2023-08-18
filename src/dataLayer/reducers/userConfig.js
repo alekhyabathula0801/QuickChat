@@ -6,10 +6,12 @@ const MODULE_PREFIX = "[ QUICKCHAT USER CONFIG ]";
 
 const ACTIONS = {
   setUserData: `${MODULE_PREFIX} setUserData`,
+  updateUserData: `${MODULE_PREFIX} updateUserData`,
 };
 
 // actions
 export const setUserData = createAction(ACTIONS.setUserData);
+export const updateUserData = createAction(ACTIONS.updateUserData);
 
 // selector
 export const getUserData = (state) => {
@@ -26,5 +28,8 @@ const initialState = {
 export default createReducer(initialState, (builder) => {
   builder.addCase(setUserData, (state, action) => {
     state.userData = action.payload;
+  });
+  builder.addCase(updateUserData, (state, action) => {
+    state.userData = { ...state.userData, ...action.payload };
   });
 });

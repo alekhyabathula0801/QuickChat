@@ -1,20 +1,27 @@
-import React, { useState } from "react";
-import { shallowEqual, useSelector } from "react-redux";
+import React, { useMemo, useState } from "react";
+import { shallowEqual, useDispatch, useSelector } from "react-redux";
 import settings from "../../assets/settings.svg";
-import { getUserData } from "../../dataLayer/reducers/userConfig";
+import {
+  getUserData,
+  updateUserData,
+} from "../../dataLayer/reducers/userConfig";
 import useAppNavigation from "../../hooks/useAppNavigation";
 import Menu from "../Menu";
 import WrapperBox from "../WrapperBox";
 import { MENU_OPTIONS } from "./constants";
+import { getUserStatus } from "./helper";
 import "./UserInfo.scss";
 
 const UserInfo = (props) => {
+  const dispatch = useDispatch();
   const { navigate } = useAppNavigation();
-  const { icon, name, subtitle, status } = useSelector(
+  const { icon, name, subtitle, isActive } = useSelector(
     getUserData,
     shallowEqual
   );
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const status = useMemo(() => getUserStatus(isActive), [isActive]);
 
   const onSettingsClick = () => {
     setIsMenuOpen(true);
@@ -29,6 +36,14 @@ const UserInfo = (props) => {
     if (pathname) {
       navigate(pathname);
     }
+  };
+
+  const onToogle = () => {
+    dispatch(
+      updateUserData({
+        isActive: !isActive,
+      })
+    );
   };
 
   return (
@@ -53,10 +68,13 @@ const UserInfo = (props) => {
       </div>
       <div className="qc-ui-subtitle">{subtitle}</div>
       <div className="qc-ui-status">
-        <div className="qc-ui-toggle">
+        <div
+          onClick={onToogle}
+          className={`qc-ui-toggle ${isActive ? "qc-ui-toggle-active" : ""}`}
+        >
           <div className="qc-uit-dot" />
         </div>
-        <div>{status}</div>
+        <div className="qc-ui-s-text">{status}</div>
       </div>
     </WrapperBox>
   );

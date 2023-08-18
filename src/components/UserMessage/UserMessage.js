@@ -3,12 +3,12 @@ import PropTypes from "prop-types";
 import "./UserMessage.scss";
 
 const UserMessage = (props) => {
-  const { icon, title, subtext, isActive } = props;
+  const { icon, title, subtext, isUser, isActive } = props;
   return (
-    <div className={`qc-user-message ${isActive ? "active" : ""}`}>
+    <div className={`qc-user-message ${isUser ? "active" : ""}`}>
       <div className="qc-um-icon-wrapper">
         <img alt="icon" src={icon} className="qc-um-icon" />
-        <span className="qc-um-dot" />
+        <span className={`qc-um-dot ${isActive ? `qc-um-dot-active` : ''}`} />
       </div>
       <div>
         <div className="qc-um-title">{title}</div>

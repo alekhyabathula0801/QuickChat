@@ -28,9 +28,11 @@ const Conversations = (props) => {
         <div className="qc-c-wrapper">
           {conversations.map((data, index) => {
             let icon = selectedContact.icon;
-            const isActive = data.userId === userData.id;
-            if (isActive) {
+            const isUser = data.userId === userData.id;
+            let isActive = selectedContact.isActive;
+            if (isUser) {
               icon = userData.icon;
+              isActive = userData.isActive;
             }
             const subtext = getDateViewValue(data.date);
             return (
@@ -39,6 +41,7 @@ const Conversations = (props) => {
                 {...data}
                 subtext={subtext}
                 icon={icon}
+                isUser={isUser}
                 isActive={isActive}
               />
             );
