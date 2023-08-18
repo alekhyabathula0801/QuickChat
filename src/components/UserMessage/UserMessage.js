@@ -8,7 +8,7 @@ const UserMessage = (props) => {
     <div className={`qc-user-message ${isUser ? "active" : ""}`}>
       <div className="qc-um-icon-wrapper">
         <img alt="icon" src={icon} className="qc-um-icon" />
-        <span className={`qc-um-dot ${isActive ? `qc-um-dot-active` : ''}`} />
+        <span className={`qc-um-dot ${isActive ? `qc-um-dot-active` : ""}`} />
       </div>
       <div>
         <div className="qc-um-title">{title}</div>
@@ -24,4 +24,6 @@ UserMessage.propTypes = {
   icon: PropTypes.string,
   title: PropTypes.string,
   subtext: PropTypes.string,
+  isUser: PropTypes.bool,
+  isActive: PropTypes.bool,
 };
