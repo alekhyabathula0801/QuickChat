@@ -4,6 +4,13 @@ import "./UserMessage.scss";
 
 const UserMessage = (props) => {
   const { icon, title, subtext, isUser, isActive } = props;
+  
+  const onCopy = () => {
+    navigator.clipboard.writeText(title).then(() => {
+      alert("text copied");
+    });
+  };
+
   return (
     <div className={`qc-user-message ${isUser ? "active" : ""}`}>
       <div className="qc-um-icon-wrapper">
@@ -11,7 +18,9 @@ const UserMessage = (props) => {
         <span className={`qc-um-dot ${isActive ? `qc-um-dot-active` : ""}`} />
       </div>
       <div>
-        <div className="qc-um-title">{title}</div>
+        <div onClick={onCopy} className="qc-um-title">
+          {title}
+        </div>
         <div className="qc-um-subtext">{subtext}</div>
       </div>
     </div>
