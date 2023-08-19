@@ -45,7 +45,7 @@
   }
 
   .qc-ui-toggle {
-    background-color: #0f4cff;
+    background-color: #98a0b1;
     border-radius: 2rem;
     width: 1.4rem;
     padding: 0.7rem 0.4rem;
@@ -65,6 +65,7 @@
     }
 
     &.qc-ui-toggle-active {
+      background-color: #0f4cff;
       .qc-uit-dot {
         float: right;
         right: 0.4rem;
