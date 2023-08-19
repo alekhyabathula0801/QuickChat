@@ -95,7 +95,7 @@ const InputBox = (props) => {
             onClickOutside={closeEmojis}
             onEmojiSelect={addEmoji}
             dynamicWidth
-            emojiButtonSize={30}
+            emojiButtonSize={32}
             emojiSize={22}
           />
         </div>
