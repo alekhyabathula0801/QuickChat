@@ -41,6 +41,7 @@
       fill: #fdb800;
       width: 2rem;
       height: 2rem;
+      cursor: pointer;
     }
   }
 
@@ -52,5 +53,12 @@
     .qc-bwi-image {
       fill: #ffffff;
     }
+  }
+}
+
+.qc-picker-wrapper {
+  em-emoji-picker {
+    margin: auto;
+    width: 100%;
   }
 }

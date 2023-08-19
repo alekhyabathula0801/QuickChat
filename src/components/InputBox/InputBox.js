@@ -1,3 +1,5 @@
+import data from "@emoji-mart/data";
+import Picker from "@emoji-mart/react";
 import { isEmpty } from "lodash-es";
 import React, { useEffect, useState } from "react";
 import { shallowEqual, useDispatch, useSelector } from "react-redux";
@@ -23,6 +25,7 @@ const InputBox = (props) => {
     shallowEqual
   );
   const [message, setMessage] = useState("");
+  const [showEmojis, setShowEmojis] = useState(false);
 
   const onChange = (event) => {
     const value = event.target.value;
@@ -33,7 +36,7 @@ const InputBox = (props) => {
     if (isEmpty(message)) {
       return;
     }
-    const date = new Date().toISOString() ;
+    const date = new Date().toISOString();
 
     const data = {
       messageId: conversations.length + 1,
@@ -53,19 +56,51 @@ const InputBox = (props) => {
     setMessage("");
   }, [conversations]);
 
+  const openEmojis = (event) => {
+    event.stopPropagation();
+    setShowEmojis(true);
+  };
+
+  const closeEmojis = () => {
+    setShowEmojis(false);
+  };
+
+  const addEmoji = (e) => {
+    const symbols = e.unified.split("-");
+    const codesArray = [];
+    symbols.forEach((el) => codesArray.push("0x" + el));
+    const emoji = String.fromCodePoint(...codesArray);
+    setMessage(message + emoji);
+  };
+
   return (
-    <WrapperBox className="qc-footer-action">
-      <Attachment className="qc-fa-attachment" />
-      <div className="qc-fa-input-wrapper">
-        <input
-          value={message}
-          onChange={onChange}
-          placeholder="Enter your message here"
-        />
-        <Smile className="qc-fa-smiley" />
-      </div>
-      <ButtonWithIcon Icon={Forward} title="Send" onClick={onSend} />
-    </WrapperBox>
+    <>
+      <WrapperBox className="qc-footer-action">
+        <Attachment className="qc-fa-attachment" />
+        <div className="qc-fa-input-wrapper">
+          <input
+            value={message}
+            onChange={onChange}
+            placeholder="Enter your message here"
+          />
+          <Smile onClick={openEmojis} className="qc-fa-smiley" />
+        </div>
+
+        <ButtonWithIcon Icon={Forward} title="Send" onClick={onSend} />
+      </WrapperBox>
+      {showEmojis && (
+        <div className="qc-picker-wrapper">
+          <Picker
+            data={data}
+            onClickOutside={closeEmojis}
+            onEmojiSelect={addEmoji}
+            dynamicWidth
+            emojiButtonSize={30}
+            emojiSize={22}
+          />
+        </div>
+      )}
+    </>
   );
 };
 
