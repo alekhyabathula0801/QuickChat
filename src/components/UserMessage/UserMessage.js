@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import "./UserMessage.scss";
 
 const UserMessage = (props) => {
-  const { icon, title, subtext, isUser, isActive, imageSrc } = props;
+  const { icon, title, subtext, isUser, isActive, fileData, fileType } = props;
 
   const onCopy = () => {
     navigator.clipboard.writeText(title).then(() => {
@@ -19,10 +19,18 @@ const UserMessage = (props) => {
       </div>
       <div>
         <div className="qc-um-title-wrapper">
-        {imageSrc && <img className="qc-um-attachment" src={imageSrc} alt="attachment" />}
-        <div className="qc-um-title" onClick={onCopy} >
-          {title}
-        </div>
+          {fileData && (
+            <object
+              className="qc-um-attachment"
+              datatype={fileType}
+              data={fileData}
+            >
+              attachment
+            </object>
+          )}
+          <div className="qc-um-title" onClick={onCopy}>
+            {title}
+          </div>
         </div>
         <div className="qc-um-subtext">{subtext}</div>
       </div>
@@ -38,14 +46,16 @@ UserMessage.propTypes = {
   subtext: PropTypes.string,
   isUser: PropTypes.bool,
   isActive: PropTypes.bool,
-  imageSrc: PropTypes.string,
+  fileData: PropTypes.string,
+  fileType: PropTypes.string,
 };
 
 UserMessage.defaultProps = {
   icon: "",
   title: "",
   subtext: "",
-  imageSrc: "",
+  fileData: "",
+  fileType: "",
   isUser: false,
   isActive: false,
 };

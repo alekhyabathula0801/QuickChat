@@ -76,6 +76,7 @@ const InputBox = (props) => {
   const onAttachmentClick = () => {
     const filepicker = document.getElementById("qc-attchment-input");
     if (filepicker) {
+      filepicker.value = null;
       filepicker.click();
     }
   };
@@ -97,27 +98,21 @@ const InputBox = (props) => {
         });
       }
     });
-  }
+  };
 
   const onFileSelected = async (e) => {
     const file = e.target.files[0];
     try {
-      let fileBase64 = "";
-
-      const isImage = file.type.split("/")[0] === "image";
-      if (isImage) {
-        fileBase64 = await promisableGetBase64(file);
-      }
+      const fileData = await promisableGetBase64(file);
       const date = new Date().toISOString();
-
       const data = {
         messageId: conversations.length + 1,
         userId: userData.id,
         title: file.name,
         date,
         isAttachment: true,
-        imageSrc: fileBase64,
-        isImage,
+        fileData,
+        fileType: file.type,
       };
       dispatch(
         addConversations({
