@@ -34,16 +34,25 @@
   }
 
   .qc-um-title {
-    border-radius: 1rem;
-    color: #535d74;
     font-size: 1.4rem;
     padding: 1rem;
+    cursor: copy;
+  }
+
+  .qc-um-title-wrapper {
+    border-radius: 1rem;
+    color: #535d74;
     width: fit-content;
     box-shadow: 0px 4px 8px -4px rgba(0, 0, 0, 0.04),
       0px 1px 1px rgba(0, 0, 0, 0.04);
     background-color: white;
     margin: 0rem 0.8rem;
-    cursor: pointer;
+  }
+
+  .qc-um-attachment {
+    width: 25rem;
+    border-radius: 1rem;
+    padding: 0rem 1rem;
   }
 
   &.active {
@@ -54,9 +63,10 @@
       text-align: right;
     }
 
-    .qc-um-title {
+    .qc-um-title-wrapper {
       background-color: #1a233c;
       color: white;
+      text-align: right;
     }
   }
 }

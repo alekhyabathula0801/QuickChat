@@ -3,8 +3,8 @@ import PropTypes from "prop-types";
 import "./UserMessage.scss";
 
 const UserMessage = (props) => {
-  const { icon, title, subtext, isUser, isActive } = props;
-  
+  const { icon, title, subtext, isUser, isActive, imageSrc } = props;
+
   const onCopy = () => {
     navigator.clipboard.writeText(title).then(() => {
       alert("text copied");
@@ -18,8 +18,11 @@ const UserMessage = (props) => {
         <span className={`qc-um-dot ${isActive ? `qc-um-dot-active` : ""}`} />
       </div>
       <div>
-        <div onClick={onCopy} className="qc-um-title">
+        <div className="qc-um-title-wrapper">
+        {imageSrc && <img className="qc-um-attachment" src={imageSrc} alt="attachment" />}
+        <div className="qc-um-title" onClick={onCopy} >
           {title}
+        </div>
         </div>
         <div className="qc-um-subtext">{subtext}</div>
       </div>
@@ -35,4 +38,14 @@ UserMessage.propTypes = {
   subtext: PropTypes.string,
   isUser: PropTypes.bool,
   isActive: PropTypes.bool,
+  imageSrc: PropTypes.string,
+};
+
+UserMessage.defaultProps = {
+  icon: "",
+  title: "",
+  subtext: "",
+  imageSrc: "",
+  isUser: false,
+  isActive: false,
 };

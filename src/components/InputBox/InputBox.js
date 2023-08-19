@@ -9,7 +9,7 @@ import { ReactComponent as Smile } from "../../assets/smile.svg";
 import { getSelectedContact } from "../../dataLayer/reducers/contacts";
 import {
   addConversations,
-  getConversationsById
+  getConversationsById,
 } from "../../dataLayer/reducers/conversations";
 import { getUserData } from "../../dataLayer/reducers/userConfig";
 import ButtonWithIcon from "../ButtonWithIcon";
@@ -73,10 +73,73 @@ const InputBox = (props) => {
     setMessage(message + emoji);
   };
 
+  const onAttachmentClick = () => {
+    const filepicker = document.getElementById("qc-attchment-input");
+    if (filepicker) {
+      filepicker.click();
+    }
+  };
+
+  const promisableGetBase64 = (file) => {
+    const reader = new FileReader();
+    return new Promise((resolve, reject) => {
+      try {
+        reader.onload = (ev) => {
+          resolve(ev.target.result);
+        };
+        reader.readAsDataURL(file);
+      } catch (err) {
+        reject({
+          ...err,
+          errorMessage: err?.message,
+          message: "Failed to read the file, please try again later",
+          type: "reader",
+        });
+      }
+    });
+  }
+
+  const onFileSelected = async (e) => {
+    const file = e.target.files[0];
+    try {
+      let fileBase64 = "";
+
+      const isImage = file.type.split("/")[0] === "image";
+      if (isImage) {
+        fileBase64 = await promisableGetBase64(file);
+      }
+      const date = new Date().toISOString();
+
+      const data = {
+        messageId: conversations.length + 1,
+        userId: userData.id,
+        title: file.name,
+        date,
+        isAttachment: true,
+        imageSrc: fileBase64,
+        isImage,
+      };
+      dispatch(
+        addConversations({
+          id: selectedContact.id,
+          data,
+        })
+      );
+    } catch (err) {
+      alert(err.message);
+    }
+  };
+
   return (
     <>
       <WrapperBox className="qc-footer-action">
-        <Attachment className="qc-fa-attachment" />
+        <input
+          id="qc-attchment-input"
+          type="file"
+          style={{ visibility: "hidden", display: "none" }}
+          onChange={onFileSelected}
+        />
+        <Attachment onClick={onAttachmentClick} className="qc-fa-attachment" />
         <div className="qc-fa-input-wrapper">
           <input
             value={message}
