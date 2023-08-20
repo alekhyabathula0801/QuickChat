@@ -100,8 +100,37 @@ const InputBox = (props) => {
     });
   };
 
+  const validateFileTypeAndSize = (file) => {
+    const fileType = file.type.split("/")[1];
+    const sizeLimit = 2;
+    const sizeInBytes = sizeLimit * 1000 * 1000;
+    const supportedTypes = [
+      "jpeg",
+      "jpg",
+      "png",
+      "bmp",
+      "pdf",
+      "txt",
+      "mp4",
+      "mp3",
+    ];
+
+    if (!supportedTypes.includes(fileType)) {
+      return "File type not supported";
+    } else if (file.size > sizeInBytes) {
+      return `File size cannot exceed ${sizeLimit}MB`;
+    }
+
+    return "";
+  };
+
   const onFileSelected = async (e) => {
     const file = e.target.files[0];
+    const errorMessage = validateFileTypeAndSize(file);
+    if (!isEmpty(errorMessage)) {
+      alert(errorMessage);
+      return;
+    }
     try {
       const fileData = await promisableGetBase64(file);
       const date = new Date().toISOString();
